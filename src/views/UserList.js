@@ -8,8 +8,8 @@ module.exports = {
             return m(m.route.Link, {
                 class: "user-list-item",
                 href: "/edit/" + user.id,
-            }, user.firstName + " " + user.lastName)
-            //return m("user-list-item", user.firstName + " " + user.lastName)
+            }, user.firstName + " " + user.lastName + " " + user.age + " years old")
+
         }))
     }
 }

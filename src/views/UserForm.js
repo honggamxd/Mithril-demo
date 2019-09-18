@@ -6,7 +6,7 @@ module.exports = {
     view: function() {
         return m("form", {
             onsubmit: function(e) {
-                e.preventDefault()
+                e.preventDefault();
                 User.save()
             }
         }, [
@@ -17,10 +17,15 @@ module.exports = {
             }),
             m("label.label", "Last name"),
             m("input.input[type=text][placeholder=Last name]", {
-            oninput: function (e) {User.currenr.lastName = e.target.value},
+            oninput: function (e) {User.current.lastName = e.target.value},
             value: User.current.lastName
             }),
-            m("button.button[type=button]","Save"),
+            m("label.label", "Age"),
+            m("input.input[type=text][placeholder=Age]", {
+                oninput: function (e) {User.current.age = e.target.value},
+                value: User.current.age
+            }),
+            m("button.button[type=submit]","Save"),
 
         ])
 

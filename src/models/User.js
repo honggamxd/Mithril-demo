@@ -1,4 +1,4 @@
-var m = require("mithril");
+var m = require("mithril")
 
 
 
@@ -23,20 +23,22 @@ var User = {
             withCredentials: true,
         })
             .then(function(result) {
+                // result.age = 21,
                 User.current = result
             })
+
     },
 
     save: function() {
-        return m.request( {
+        return m.request({
             method: "PUT",
             url: "https://rem-rest-api.herokuapp.com/api/users/" + User.current.id,
             body: User.current,
             withCredentials: true,
         })
-
-
     }
 }
+
+
 
 module.exports = User
